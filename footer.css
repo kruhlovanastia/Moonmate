@@ -1,0 +1,57 @@
+/* =========================================
+   FOOTER.CSS - Стилі для підвалу сайту
+   ========================================= */
+
+   .footer {
+    position: relative;
+    padding: 50px 20px;
+    background-color: #150717;
+    border-top: 2px solid #3a0e3c;
+    overflow: hidden;
+}
+
+.footer-container {
+    /* Робимо контейнер вужчим, щоб текст не розлітався по краях */
+    max-width: 1000px; 
+    margin: 0 auto;
+    display: flex;
+    /* Посуваємо все вліво і вирівнюємо по нижньому краю логотипу */
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 80px; /* Відступ між логотипом і текстом */
+    position: relative;
+    z-index: 2;
+}
+
+.footer-logo img {
+    height: 50px;
+    object-fit: contain;
+}
+
+.footer-info {
+    font-size: 12px;
+    color: #aaaaaa;
+    line-height: 1.6;
+}
+
+.footer-info strong {
+    color: #ffffff;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-contacts {
+    display: flex;
+    gap: 40px;
+    margin-top: 15px;
+}
+
+.footer-arch-img {
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    height: 90px;
+    opacity: 0.8;
+    z-index: 1;
+}
