@@ -1,0 +1,173 @@
+/* =========================================
+   PROFILE.CSS - Стилі сторінки профілю
+   ========================================= */
+
+   .profile-page {
+    position: relative;
+    min-height: 100vh;
+    padding: 40px 20px;
+    /* ФОН: Використовуємо image 57 (місяць над водою) */
+    background-image: url('../img/image 57.png');
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* Затемнення фону, щоб картка читалась краще */
+.profile-page::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(26, 6, 27, 0.4);
+    z-index: 1;
+}
+
+.profile-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1000px;
+}
+
+/* --- ГОЛОВНА КАРТКА (Рамка) --- */
+.profile-card {
+    display: flex;
+    background: rgba(34, 11, 36, 0.6); /* Напівпрозорий фон */
+    border: 2px solid rgba(255, 255, 255, 0.6); /* Біла рамка */
+    border-radius: 40px;
+    padding: 40px;
+    gap: 40px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Легке розмиття фону */
+}
+
+/* --- ЛІВА ЧАСТИНА: АВАТАР --- */
+.profile-avatar-section {
+    flex-shrink: 0;
+    width: 350px;
+}
+
+.avatar-wrapper {
+    position: relative;
+    width: 100%;
+    height: 450px;
+    border-radius: 30px;
+    overflow: hidden;
+    border: 3px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+    cursor: pointer;
+}
+
+.avatar-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.4s ease-in-out;
+}
+
+/* Логіка наведення: 
+   За замовчуванням видно default-avatar. 
+   При наведенні на wrapper, default стає прозорим, а hover-avatar з'являється. */
+.hover-avatar {
+    opacity: 0;
+}
+
+.avatar-wrapper:hover .default-avatar {
+    opacity: 0;
+}
+
+.avatar-wrapper:hover .hover-avatar {
+    opacity: 1;
+}
+
+/* --- ПРАВА ЧАСТИНА: ІНФОРМАЦІЯ --- */
+.profile-info-section {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-name-row {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.profile-name {
+    font-family: 'Cormorant Garamond', var(--font-heading);
+    font-size: 56px;
+    font-weight: 600;
+    font-style: italic;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+}
+
+.gender-icon {
+    height: 30px;
+}
+
+/* Деталі (Місто, Вік, Фаза) */
+.profile-details {
+    margin-bottom: 25px;
+}
+
+.detail-item {
+    font-size: 16px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #e0b0e0;
+}
+
+.detail-item strong {
+    color: #fff;
+    font-weight: 600;
+}
+
+.detail-icon {
+    height: 24px;
+}
+
+/* Рожеві блоки */
+.info-box {
+    background: #ff00a0; /* Яскраво-рожевий */
+    border-radius: 20px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(255, 0, 160, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.section-subtitle {
+    font-family: var(--font-heading);
+    font-size: 22px;
+    color: #fff;
+    margin-bottom: 10px;
+    font-weight: 400;
+}
+
+/* Кнопка "Редагувати" */
+.profile-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: auto; /* Притискає кнопку до низу */
+    padding-top: 20px;
+}
+
+.btn-action {
+    padding: 12px 40px;
+    font-size: 16px;
+    border-radius: 30px;
+}
