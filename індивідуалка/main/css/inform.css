@@ -1,0 +1,195 @@
+/* =========================================
+   INFO.CSS — ІНФОРМАЦІЙНІ БЛОКИ (КАРТКИ)
+   ========================================= */
+
+.info-blocks-section {
+    position: relative;
+    background-color: #6B3061;
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.info-blocks-section .container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+/* Загальний стиль карток: чорний колір із прозорістю 48% */
+.info-card {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.48);
+    border-radius: 35px;
+    padding: 50px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+/* --- Перша картка (з Буддою) --- */
+.card-buddha {
+    flex-direction: row;
+}
+
+.card-buddha .card-content {
+    max-width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.card-buddha h2 {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.card-subtitle {
+    font-size: 20px;
+    color: #ffffff;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.card-buddha .btn-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 40px;
+    background-color: #FC0FC0;
+    color: #ffffff;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card-buddha .btn-register:hover {
+    transform: scale(1.05);
+    background-color: #FC0FC0;
+}
+
+.buddha-img img {
+    max-width: 220px;
+    height: auto;
+    display: block;
+}
+
+
+/* --- Друга картка (з Ганешою) --- */
+.card-ganesha {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+.ganesha-img img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+}
+
+.card-ganesha .card-content {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-quote {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+.sub-quote {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.pink-text {
+    color: #FC0FC0;
+}
+
+
+
+
+/* =========================================
+   АДАПТИВНІСТЬ КАРТОК ПІД ПЛАНШЕТИ ТА ТЕЛЕФОНИ
+   ========================================= */
+
+@media (max-width: 1024px) {
+    .info-card {
+        padding: 40px 30px;
+    }
+
+    .card-buddha h2 {
+        font-size: 30px;
+    }
+
+    .card-subtitle, .main-quote, .sub-quote {
+        font-size: 18px;
+    }
+
+    .buddha-img img, .ganesha-img img {
+        max-width: 160px;
+    }
+}
+
+@media (max-width: 767px) {
+    .info-blocks-section {
+        padding: 30px 15px;
+    }
+
+    .info-card {
+        flex-direction: column-reverse !important;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+        border-radius: 25px;
+    }
+
+    .card-buddha .card-content,
+    .card-ganesha .card-content {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .card-buddha h2 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    .card-subtitle {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .main-quote, .sub-quote {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    .buddha-img img, .ganesha-img img {
+        max-width: 140px;
+        margin: 0 auto;
+    }
+}
+.info-blocks-section {
+    position: relative;
+    background-color: #6B3061; /* Продовження фіолетової зони */
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+}
