@@ -1,0 +1,546 @@
+/* =========================================
+   ГОЛОВНИЙ ЕКРАН (СЦЕНА З FIGMA + ТЕКСТ ПОВЕРХ)
+   ========================================= */
+   .hero {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+    padding-bottom: 70px;
+    background-color: #271324;
+}
+
+.hero-picture {
+    display: block;
+    width: 100%;
+}
+
+.hero-img {
+    display: block;
+    width: 100%;
+    height: auto; 
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hero-overlay * {
+    pointer-events: auto;
+}
+
+/* --- Текст для ПК --- */
+.hero-title {
+    position: absolute;
+    top: 18%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 650px;
+    margin: 0;
+    font-family: 'Great Vibes', var(--font-heading), cursive;
+    font-weight: 400;
+    font-size: 72px;
+    font-style: normal;
+    line-height: 1.2;
+    text-align: center;
+    color: #1a061b;
+}
+
+.hero-story {
+    position: absolute;
+    transform: translateY(180px);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 0 4% 3%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.hero-story h2 {
+    font-family: 'Great Vibes', var(--font-heading), cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 58px;
+    width: auto;
+    margin: 0;
+    text-align: left;
+}
+
+.hero-story h2 em {
+    color: #FC0FC0;
+}
+
+.hero-story p {
+    width: 72%;
+    margin-left: auto;
+    margin-right: 0;
+    align-self: flex-end;
+    font-size: 32px;
+    font-family: 'Pattaya', var(--font-body), sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    text-align: right;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* =========================================
+   ІНФОРМАЦІЙНІ БЛОКИ ТА ЛОКАЛЬНИЙ ГРАДІЄНТ (ПК)
+   ========================================= */
+
+.info-blocks-section {
+    font-family: 'Montserrat Alternates', var(--font-heading), var(--font-body), sans-serif;
+    background: linear-gradient(180deg, #271424 0%, #6B3061 15%, #6B3061 100%);
+    padding: 60px 20px;
+}
+
+.info-blocks-section .container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin: 90px auto 0;
+}
+
+/* Загальний стиль карток */
+.info-card {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.48);
+    border-radius: 35px;
+    padding: 50px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    overflow: hidden; /* ВАЖЛИВО: не дає картинкам вилазити за межі */
+}
+
+/* --- Перша картка (з Буддою) --- */
+.card-buddha {
+    flex-direction: row;
+}
+
+.card-buddha .card-content {
+    max-width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    z-index: 2;
+}
+
+.card-buddha h2 {
+    font-family: var(--font-heading);
+    font-size: 38px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    text-transform: uppercase;
+}
+
+.card-subtitle {
+    font-size: 20px;
+    color: #ffffff;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.card-buddha .btn-register {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 40px;
+    background-color: #FC0FC0;
+    color: #ffffff;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 18px;
+    text-decoration: none;
+    box-shadow: 0 0 20px rgba(255, 20, 147, 0.5);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card-buddha .btn-register:hover {
+    transform: scale(1.05);
+    background-color: #FC0FC0;
+}
+
+/* Блок з картинкою Будди */
+.buddha-img {
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.buddha-img img {
+    max-width: 220px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+/* --- Друга картка (з Ганешою) --- */
+.card-ganesha {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 50px;
+}
+
+.ganesha-img img {
+    max-width: 200px;
+    height: auto;
+    display: block;
+}
+
+.card-ganesha .card-content {
+    max-width: 70%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.main-quote {
+    font-size: 22px;
+    line-height: 1.5;
+    color: #ffffff;
+}
+
+.sub-quote {
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.pink-text {
+    color: #FC0FC0;
+}
+
+/* =========================================
+   СІТКА ТА СТИЛІ КАРТОК (FEATURES CARDS)
+   ========================================= */
+
+.cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 15px;
+    position: relative;
+    z-index: 3;
+    margin-top: 50px;
+}
+
+.card {
+    background: #FC0FC0;
+    padding: 30px 15px;
+    border-radius: 45px;
+    text-align: center;
+    border: 4px solid #ffffff;
+    box-shadow: inset 0 0 0 3px #ffffff, 0 10px 20px rgba(0, 0, 0, 0.3);
+    width: calc(20% - 12px);
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    height: 45px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.card h3 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 24px;
+    margin-bottom: 8px;
+    color: #fff;
+}
+
+.card p {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    color: #ffe6f9;
+    margin: 0;
+}
+
+/* =========================================
+   АДАПТИВНІСТЬ ДЛЯ ПЛАНШЕТІВ (1024px)
+   ========================================= */
+
+@media (max-width: 1024px) {
+    /* Головний екран */
+    .hero {
+        background-color: #000000;
+        overflow: visible;
+        padding-bottom: 45px;
+    }
+
+    .hero-title {
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        max-width: 500px;
+        font-size: 52px;
+        text-align: center;
+    }
+
+    .hero-story {
+        padding: 0 30px 4%;
+        transform: translateY(10px);
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .hero-story h2 {
+        font-size: 44px;
+        width: auto;
+        text-align: left;
+    }
+
+    .hero-story p {
+        font-size: 20px;
+        width: 80%;
+        margin-left: auto;
+        margin-right: 0;
+        align-self: flex-end;
+        text-align: center;
+    }
+
+    /* Інфо-блоки */
+    .info-blocks-section {
+        background: linear-gradient(180deg, #000000 0%, #6B3061 8%, #6B3061 100%);
+        padding: 36px 24px;
+    }
+
+    /* Картка Будди для планшета (у колонку) */
+    .card-buddha {
+        display: flex !important;
+        flex-direction: column !important;
+        text-align: center;
+        padding: 30px 20px;
+        gap: 20px;
+    }
+
+    .card-buddha .card-content {
+        max-width: 100%;
+        align-items: center;
+        order: 1;
+    }
+
+    .card-buddha h2, .card-subtitle {
+        text-align: center;
+    }
+
+    .card-buddha .buddha-img {
+        order: 2;
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+
+    .card-buddha .buddha-img img {
+        width: 100%;
+        max-height: 250px;
+        margin: 0 auto;
+    }
+
+    .card-buddha .btn-register {
+        order: 3;
+        margin-top: 10px;
+    }
+
+    /* Картка Ганеші для планшета */
+    .card-ganesha {
+        display: block !important;
+        text-align: left;
+    }
+
+    .card-ganesha .card-content {
+        display: block;
+        max-width: 100%;
+    }
+
+    .card-ganesha .ganesha-img {
+        float: left;
+        margin: 8px 18px 6px 0;
+        width: 35%;
+    }
+
+    .card-ganesha .ganesha-img img {
+        width: 100%;
+        max-width: 175px;
+    }
+
+    .main-quote, .sub-quote {
+        font-size: 23px;
+        text-align: center;
+    }
+
+    /* Сітка карток (5 штук) */
+    .cards-grid {
+        justify-content: center;
+        gap: 20px;
+    }
+    .card {
+        width: calc(33.333% - 15px);
+    }
+}
+
+/* =========================================
+   АДАПТИВНІСТЬ ДЛЯ ТЕЛЕФОНІВ (767px)
+   ========================================= */
+
+@media (max-width: 767px) {
+    /* Головний екран */
+    .hero {
+        background-color: #000000;
+        overflow: visible;
+        padding-bottom: 65px;
+    }
+
+    .hero-title {
+        top: 28%;
+        left: 47%;
+        transform: translate(-50%, -50%);
+        max-width: 350px;
+        font-size: 44px;
+        text-align: center;
+    }
+
+    .hero-story {
+        padding: 0 15px 4%;
+        transform: translateY(50px);
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .hero-story h2 {
+        font-size: 28px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-story p {
+        font-size: 13px;
+        width: 100%;
+        margin: 0 auto;
+        align-self: center;
+        text-align: center;
+    }
+
+    /* Інфо-блоки */
+    .info-blocks-section {
+        background: linear-gradient(180deg, #000000 0%, #6B3061 6%, #6B3061 100%);
+        padding: 30px 15px;
+    }
+
+    /* Картка Будди для телефону */
+    .card-buddha {
+        flex-direction: column !important;
+        padding: 25px 15px;
+        gap: 15px;
+    }
+
+    .card-buddha .card-content {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .card-buddha h2 {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .card-subtitle {
+        font-size: 15px;
+        text-align: center;
+    }
+
+    .card-buddha .buddha-img {
+        max-width: 200px;
+    }
+
+    .card-buddha .buddha-img img {
+        max-height: 200px;
+        transform: none;
+    }
+
+    .card-buddha .btn-register {
+        padding: 10px 22px;
+        font-size: 14px;
+    }
+
+    /* Картка Ганеші для телефону */
+    .card-ganesha {
+        display: block !important;
+        text-align: left;
+    }
+
+    .card-ganesha .ganesha-img {
+        float: left;
+        margin: 8px 14px 4px 0;
+        width: 42%;
+    }
+
+    .card-ganesha .ganesha-img img {
+        max-width: 145px;
+    }
+
+    .main-quote, .sub-quote {
+        font-size: 16px;
+        text-align: center;
+    }
+
+    /* Сітка карток (5 штук) */
+    .cards-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+    
+    .card {
+        width: 100%;
+        min-height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 14px 20px;
+        border-radius: 50px;
+        text-align: left;
+        gap: 20px;
+    }
+
+    .card img {
+        height: 38px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .card h3 {
+        font-family: var(--font-body), sans-serif;
+        font-size: 16px;
+        margin-bottom: 2px;
+    }
+
+    .card p {
+        font-family: var(--font-body), sans-serif;
+        font-size: 11px;
+    }
+}
